@@ -1,0 +1,19 @@
+#!/bin/sh
+i=$#
+j=0
+sum=0
+while [ $j -ne $i ]
+do
+	sum=$(($sum+$1))
+	if [ $j = 0 ]
+	then
+		echo -n "$1"
+	else
+		echo -n " + "
+		echo -n $1
+	fi
+	shift
+	j=$(($j+1))
+done
+echo -n " = "
+echo $sum

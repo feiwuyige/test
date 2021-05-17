@@ -1,0 +1,21 @@
+#!/bin/sh
+sum=0
+for i in "$@"
+do
+	if [ "$i" = "[Return]" ]
+	then
+		break;
+	fi
+
+	sum=$(($sum+$i))
+#	sum=`expr $sum + $i`
+	if [ $i = $1 ]
+	then
+		echo -n "$i"
+	else
+		echo -n " + "
+		echo -n $i
+	fi
+done
+echo -n " = "
+echo $sum

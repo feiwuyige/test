@@ -1,0 +1,20 @@
+#!/bin/sh
+sum=0
+i=$#
+j=0
+until [ $i -eq $j ]
+do
+	sum=$(($sum+$1))
+	if [ $j = 0 ]
+	then
+		echo -n $1
+	else
+		echo -n " + "
+		echo -n $1
+	fi
+	shift
+	j=$((j+1))
+done
+echo -n " = "
+echo $sum
+
